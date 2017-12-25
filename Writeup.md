@@ -45,7 +45,7 @@ It is defined as function `BilinearUpSampling2D()` in Keras.
 
 ## 3. Architecture of FCN  
 The previous section talks about the main components of a FCN one by one. This section will discuss how to put the components together in a special arrangement which will act as a fully-convolution neural network.  
-![Convolutional Layer](/report/imgs/fcn.png "Fig. 2 Overall Architecture of FCN")  
+![Convolutional Layer](/report/imgs/FCN.png "Fig. 2 Overall Architecture of FCN")  
 Fig. 2 Overall Architecture of FCN  
 
 ### 3.1 Structure of Encoder  
