@@ -32,11 +32,14 @@ The main beinifet of batch normalization are: (1) Networks train faster; (2) All
 
 The function `eparable_conv2d_batchnorm()` in Keras performs batch normalization.  
 
-### 2.4 1 x 1 Convolutions  
-Generally speaking, the output of a convolutional layer is a 4D tensor. The main function of 1 x 1 Convolution is to flastten the 4D tensor to 2D tensor. 
-### 2.4 Bilinear Upsample  
 
-### 2.5 Transposed Convolution
+### 2.4 1 x 1 Convolutions  
+Generally speaking, the output of a convolutional layer is a 4D tensor. The 1x1 convolution helped in reducing the dimensionality of the layer. In the FCN, the 1 x 1 convolution is also used to finish up the encoder section of the network and pass data to the decoder.  
+
+### 2.4 Transposed Convolution  
+
+### 2.5 Bilinear Upsample  
+
 
 
 ## 3. Architecture of FCN  
