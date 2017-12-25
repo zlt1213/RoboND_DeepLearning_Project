@@ -37,13 +37,15 @@ The function `eparable_conv2d_batchnorm()` in Keras performs batch normalization
 Generally speaking, the output of a convolutional layer is a 4D tensor. The 1x1 convolution helped in reducing the dimensionality of the layer. In the FCN, the 1 x 1 convolution is also used to finish up the encoder section of the network and pass data to the decoder.  
 
 ### 2.4 Transposed Convolution  
+Compared with convolutional layers, the main function of a transposed layer is to upsampling the input layer. The transposed convolution can be act as the core part in the decoder in a FCN.
 
 ### 2.5 Bilinear Upsample  
-
-
+Bilinear is another method to upsample the inputs to this layer. It utilizes the weighted average of four nearest known pixels, located diagonally to a given pixel, to estimate a new pixel intensity value. The weighted average is usually distance dependent.  
+It is defined as function `BilinearUpSampling2D()` in Keras.  
 
 ## 3. Architecture of FCN  
-
+The previous section talks about the main components of a FCN one by one. This section will discuss how to put the components together in a special arrangement which will act as a fully-convolution neural network.  
+![Convolutional Layer](/report/imgs/fcn.png "Fig. 1 Convolutional Layer[1]")  
 ### 3.1 Structure of Encoder  
 
 ### 3.2 Structure of Decoder  
@@ -51,47 +53,16 @@ Generally speaking, the output of a convolutional layer is a 4D tensor. The 1x1 
 ### 3.3 Overall Structure of FCN  
 
 ## 4. Implementation of Follow Me Project  
+
 ### 4.1 Data Collection  
+
 ### 4.2 Hyper Parameters  
+
 Epoch  
 Learning Rate  
 Batch Size  
 Etc.  
-## 5. Reference  
+## 6. Reference  
 [1] http://iamaaditya.github.io/2016/03/one-by-one-convolution/  
 
 [2] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift  
-
-
-
-network architecture and the role that it plays in the overall network.
-
-The student can demonstrate the benefits and/or drawbacks of different network architectures pertaining to this project and can justify the current network with factual data.
-
-
-Any choice of configurable parameters should also be explained in the network architecture.
-
-
-a graph, table, diagram, illustration or figure for the overall network to serve as a reference for the reviewer.
-
-
-The write-up conveys the student's understanding of the parameters chosen for the the neural network.
-
-The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
-
-
-
-
-The student has a clear understanding and is able to identify the use of various techniques and concepts in network layers indicated by the write-up.
-
-The student demonstrates a clear understanding of 1 by 1 convolutions and where/when/how it should be used.
-
-The student demonstrates a clear understanding of a fully connected layer and where/when/how it should be used.
-
-The student has a clear understanding of image manipulation in the context of the project indicated by the write-up.
-
-The student is able to identify the use of various reasons for encoding / decoding images, when it should be used, why it is useful, and any problems that may arise.
-
-The student displays a solid understanding of the limitations to the neural network with the given data chosen for various follow-me scenarios which are conveyed in the write-up.
-
-The student is able to clearly articulate whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required.
