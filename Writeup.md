@@ -45,14 +45,23 @@ It is defined as function `BilinearUpSampling2D()` in Keras.
 
 ## 3. Architecture of FCN  
 The previous section talks about the main components of a FCN one by one. This section will discuss how to put the components together in a special arrangement which will act as a fully-convolution neural network.  
+
 ![Convolutional Layer](/report/imgs/FCN.png "Fig. 2 Overall Architecture of FCN")  
+
 Fig. 2 Overall Architecture of FCN  
 
 ### 3.1 Structure of Encoder  
+As shown in the Fig. 2, the yellow-colored layers are separable convolutional layers. These three layers form the section of encoder in the FCN network. Each convolutional operation strides the kernel for 2 and double the depth of the layer.
 
 ### 3.2 Structure of Decoder  
+In Fig.2, the decoder section of FCN is colored as green. The output of 1 x 1 convolution is pumped into the bilinear upsample functions one after another. Finally, the output is upsampled to the same size as the input layer.
+
+### 3.3 1 x 1 Convolution as Connection
+The encoder section and the decoder section are connected with a 1 x 1 convolutional layer. The main function of 1 x 1 convolution is explained in section 2.4.
 
 ### 3.3 Overall Structure of FCN  
+A typical FCN composed of a encoder section and a decoder section which are connected with a 1 x 1 convolution. The input is pumped though the whole network.  
+A special technique called skip layers is introduced to improve the performs of FCN. As show in Fig. 2, some of the layers in the encoder section or even the input itself are concatenated to the decoder layers, so that the overall information in the input image can be reserved.  
 
 ## 4. Implementation of Follow Me Project  
 
