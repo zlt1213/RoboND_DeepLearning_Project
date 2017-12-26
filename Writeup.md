@@ -65,15 +65,39 @@ A special technique called skip layers is introduced to improve the performs of 
 
 ## 4. Implementation of Follow Me Project  
 
-### 4.1 Data Collection  
+### 4.1 Python Code, Tensorflow and Keras
+The program in written in Python. Keras is a high level deep learning API based on Tensorflow. With Keras, it's mush easier to build the high level architecture of neural networks.  The main Keras API functions used in the program are:
+  - `SeparableConv2DKeras()`        separable convolution  
+  - `BatchNormalization()`          batch normalization of a layer  
+  - `Conv2D()`                      classical convolution  
+  - `BilinearUpSampling2D()`        bilinear up sampling of a input  
 
-### 4.2 Hyper Parameters  
+With the help of these functions, the encoder block and decoder block are constructed. One encoder block contains a operation of separable convolution followed by a operation of batch normalization. One decoder block contains one upsample operation, the result of which is concatenated with a `large_ip_layer`. After that, the output is pumped into two stages of separable convolutions.  
 
-Epoch  
-Learning Rate  
-Batch Size  
-Etc.  
-## 6. Reference  
+The encoder and the decoder and connected with a 1x1 convolution implemented by `conv2d_batchnorm()` with kernel size equals to 1.  
+
+The training of the neural network is done on a AWS cloud computing machine boosted by a Nvidia K80 GPU. The choice of hyper parameters are discussed in detail in the following sections.  
+
+### 4.2 Data Collection
+
+
+
+### 4.3 Hyper Parameters  
+For this FCN, there are mainly 5 hyper-parameters to tune. They are:
+- **learning_rate**: defines the ratio that how much the weights are updated in each propagation.
+- **batch_size**: number of training samples/images that get propagated through the network in a single pass.
+- **num_epochs**: number of times the entire training dataset gets propagated through the network.
+- **steps_per_epoch**: number of batches of training images that go through the network in 1 epoch. We have provided you with a default value. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
+- **validation_steps**: number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset. We have provided you with a default value for this as well.
+- **workers**: maximum number of processes to spin up. This can affect your training speed and is dependent on your hardware. We have provided a recommended value to work with.  
+
+Among these hyper parameters, three of them are critical to the training process of the FCN. They are **learning_rate**, **batch_size** and **num_epochs**. The **learning_rate** determines how much will the weights be updated in each propagation pass. Although a higher learning rate may fasten the training process, it may also make the results less accurate. The determination of batch size is based on the hardware ability of the GPU. Number of epochs is the number of loops the training process will perform. After trying several different settings, the final hyper paramaters are determined as in the jupyter notebook.
+
+## 6. Training Process and Results
+
+## 7. Discussion and Future Work
+
+## 8. Reference  
 [1] http://iamaaditya.github.io/2016/03/one-by-one-convolution/  
 
 [2] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift  
