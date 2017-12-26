@@ -83,7 +83,7 @@ The training of the neural network is done on a AWS cloud computing machine boos
 
 The training data and validation data are collected from QuadSim software provided by Udacity. The simulator can save image, depth map and person-mask in real time to a specified folder. In this project, the collected data is saved at `\data\raw_sim_data\train(validation)\run*`(such as run1 or run2 for different runs).  
 In order to capture as much as images with the hero at the center, the first data collection run is designed in such a way that the hero is flowing a straight line while the drone is zig-zag about the line.  
-The
+Instead of using directly, the data collected is preprocessed with the help of `preprocess_ims.py`. The preprocess transform the depth map to the binary mask for the training of the FCN. On the other hand, the preprocess reduces the size of the raw data, thus makes the raw data suitable for uploading to AWS. 
 
 ### 4.3 Hyper Parameters  
 For this FCN, there are mainly 5 hyper-parameters to tune. They are:
