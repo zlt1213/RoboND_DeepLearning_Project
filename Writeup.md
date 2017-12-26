@@ -62,6 +62,7 @@ The encoder section and the decoder section are connected with a 1 x 1 convoluti
 ### 3.3 Overall Structure of FCN  
 A typical FCN composed of a encoder section and a decoder section which are connected with a 1 x 1 convolution. The input is pumped though the whole network.  
 A special technique called skip layers is introduced to improve the performs of FCN. As show in Fig. 2, some of the layers in the encoder section or even the input itself are concatenated to the decoder layers, so that the overall information in the input image can be reserved.  
+In order to test and tune the performance of the network, a special parameter `num_filters` is employed to define the number of kernels in each layer.  
 
 ## 4. Implementation of Follow Me Project  
 
@@ -80,7 +81,9 @@ The training of the neural network is done on a AWS cloud computing machine boos
 
 ### 4.2 Data Collection
 
-
+The training data and validation data are collected from QuadSim software provided by Udacity. The simulator can save image, depth map and person-mask in real time to a specified folder. In this project, the collected data is saved at `\data\raw_sim_data\train(validation)\run*`(such as run1 or run2 for different runs).  
+In order to capture as much as images with the hero at the center, the first data collection run is designed in such a way that the hero is flowing a straight line while the drone is zig-zag about the line.  
+The
 
 ### 4.3 Hyper Parameters  
 For this FCN, there are mainly 5 hyper-parameters to tune. They are:
