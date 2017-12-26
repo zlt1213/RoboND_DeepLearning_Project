@@ -77,13 +77,11 @@ With the help of these functions, the encoder block and decoder block are constr
 
 The encoder and the decoder and connected with a 1x1 convolution implemented by `conv2d_batchnorm()` with kernel size equals to 1.  
 
-The training of the neural network is done on a AWS cloud computing machine boosted by a Nvidia K80 GPU. The choice of hyper parameters are discussed in detail in the following sections.  
-
 ### 4.2 Data Collection
 
 The training data and validation data are collected from QuadSim software provided by Udacity. The simulator can save image, depth map and person-mask in real time to a specified folder. In this project, the collected data is saved at `\data\raw_sim_data\train(validation)\run*`(such as run1 or run2 for different runs).  
 In order to capture as much as images with the hero at the center, the first data collection run is designed in such a way that the hero is flowing a straight line while the drone is zig-zag about the line.  
-Instead of using directly, the data collected is preprocessed with the help of `preprocess_ims.py`. The preprocess transform the depth map to the binary mask for the training of the FCN. On the other hand, the preprocess reduces the size of the raw data, thus makes the raw data suitable for uploading to AWS. 
+Instead of using directly, the data collected is preprocessed with the help of `preprocess_ims.py`. The preprocess transform the depth map to the binary mask for the training of the FCN. On the other hand, the preprocess reduces the size of the raw data, thus makes the raw data suitable for uploading to AWS.
 
 ### 4.3 Hyper Parameters  
 For this FCN, there are mainly 5 hyper-parameters to tune. They are:
@@ -97,6 +95,12 @@ For this FCN, there are mainly 5 hyper-parameters to tune. They are:
 Among these hyper parameters, three of them are critical to the training process of the FCN. They are **learning_rate**, **batch_size** and **num_epochs**. The **learning_rate** determines how much will the weights be updated in each propagation pass. Although a higher learning rate may fasten the training process, it may also make the results less accurate. The determination of batch size is based on the hardware ability of the GPU. Number of epochs is the number of loops the training process will perform. After trying several different settings, the final hyper paramaters are determined as in the jupyter notebook.
 
 ## 6. Training Process and Results
+### 6.1 The Training Process
+I tried to train the network on two different machines. The first one is the Amazon E2C Instance which has a Nvidia K80 inside. The second one is the my personal server(HP Z820) with Nvidia 1080 ti inside. One the E2C Instance, the average run time for a single epoch is about 510 second. Mean while, the run time for a single epoch on Nvidia 1080 ti is around 220 seconds, so I decided to train the network on my local machine.  
+After a few test runs, I noticed that the overall performance of the machine will increase significantly by increasing the number of kernels in each convolutional layers. Thus I double the number of kernels and tune the batch size so that the network will fit into the GPU-RAM.  
+The overall training process took more than one hour. The process and the final results can be seen in the jupyter notebook.  
+### 6.2 The results  
+
 
 ## 7. Discussion and Future Work
 
