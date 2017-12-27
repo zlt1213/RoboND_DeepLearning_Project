@@ -2,7 +2,7 @@
 
 
 ## 1. Introduction
-
+![Convolutional Layer](/report/imgs/title_img.png "Title Image")  
 Fully-Convolutional Neural network(FCN) is a kind of deep learning neural networks that performs well for tasks such as image identification and image segmentation. Based on the Drone Sim environment and low level control algorithms(such as PID) developed previously, the main goal of this project is to develop some higher level algorithms in order to make the drone follow a certain person in the simulation environment. FCN is implemented as the core algorithm for image identification and image segmentation.  
 
 ## 2. Types of Layers in Convolutional Neural Network  
@@ -46,7 +46,7 @@ It is defined as function `BilinearUpSampling2D()` in Keras.
 ## 3. Architecture of FCN  
 The previous section talks about the main components of a FCN one by one. This section will discuss how to put the components together in a special arrangement which will act as a fully-convolution neural network.  
 
-![Convolutional Layer](/report/imgs/FCN.png "Fig. 2 Overall Architecture of FCN")  
+![Convolutional Layer](/report/imgs/fcn.png "Fig. 2 Overall Architecture of FCN")  
 
 Fig. 2 Overall Architecture of FCN  
 
@@ -100,17 +100,29 @@ I tried to train the network on two different machines. The first one is the Ama
 After a few test runs, I noticed that the overall performance of the machine will increase significantly by increasing the number of kernels in each convolutional layers. Thus I double the number of kernels and tune the batch size so that the network will fit into the GPU-RAM.  
 The overall training process took more than one hour. The process and the final results can be seen in the jupyter notebook.  
 ### 6.2 The results  
-The performance of this network structure is good enought. The trained network successfully accomplishs the tasks of image segmentation and image identificatoin. The detailed results are contained in the project folder. 
+The performance of this network structure is good enough. The trained network successfully accomplishes the tasks of image segmentation and image identification. The detailed results are contained in the project folder.  
 
+![Convolutional Layer](/report/imgs/result_hero.png "Fig. 3 Result of Target Identification")  
+Fig. 3 Result of Target Identification  
 
+![Convolutional Layer](/report/imgs/result_with_no_tag.png "Fig. 4 Result without Target in Image")  
+Fig. 4 Result without Target in Image  
+
+![Convolutional Layer](/report/imgs/result_with_tag.png "Fig. 5 Result with Target in Image")  
+Fig. 5 Result with Target in Image  
+
+![Convolutional Layer](/report/imgs/final_score.png "Fig. 6 Final Score")  
+Fig. 6 Final Score
+
+As shown in the figures above the hero is detected successfully. The final score of the training is 0.413, which is good enough.
 
 ## 7. Discussion and Future Work
-It is interesting to 
+It is interesting to
 
 
 By trying different kinds of structures, it is clear that the number of kernels has a big influence on the performance of the FCN. Increasing a small amount of kernels will increase the overall performance of the FCN significantly. Limited by the RAM in the GPU, the max number of kernels of the first convolutional layer is 96. I would like to try a larger number of kernels in the future.  
 
-As for different tasks such as detecting cats or dogs in the image, the kernel should be different. For this reason, if the network is supposed to be used for thoes tasks, maybe the it's good to add both skip layers and kernels. 
+As for different tasks such as detecting cats or dogs in the image, the kernel should be different. For this reason, if the network is supposed to be used for thoes tasks, maybe the it's good to add both skip layers and kernels.
 
 This Follow Me project is quit interesting. I learnt a lot from this project. I will apply this tech to my self-driving cart in the very near future.  
 
