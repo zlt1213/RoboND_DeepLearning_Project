@@ -101,7 +101,11 @@ After a few test runs, I noticed that the overall performance of the machine wil
 The overall training process took more than one hour. The process and the final results can be seen in the jupyter notebook.  
 ### 6.2 The results  
 
+
+
 ## 7. Discussion and Future Work
+It is interesting to 
+
 
 ## 8. Reference  
 [1] http://iamaaditya.github.io/2016/03/one-by-one-convolution/  

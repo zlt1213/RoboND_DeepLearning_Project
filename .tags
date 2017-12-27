@@ -1,0 +1,204 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BatchIteratorSimple	code/utils/data_iterator.py	/^class BatchIteratorSimple(Iterator):$/;"	c
+BilinearUpSampling2D	code/utils/separable_conv2d.py	/^class BilinearUpSampling2D(Layer):$/;"	c
+BytesIO	code/follower.py	/^from io import BytesIO$/;"	i
+BytesIO	code/utils/sio_msgs.py	/^from io import BytesIO$/;"	i
+BytesIO	code/utils/visualization.py	/^from io import BytesIO$/;"	i
+Flask	code/follower.py	/^from flask import Flask$/;"	i
+Follower	code/follower.py	/^class Follower(object):$/;"	c
+Image	code/follower.py	/^from PIL import Image$/;"	i
+Image	code/utils/sio_msgs.py	/^from PIL import Image$/;"	i
+Image	code/utils/visualization.py	/^from PIL import Image$/;"	i
+InputSpec	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras.engine import InputSpec$/;"	i
+Iterator	code/utils/data_iterator.py	/^from tensorflow.contrib.keras.python.keras.preprocessing.image import Iterator$/;"	i
+K	code/utils/data_iterator.py	/^from tensorflow.contrib.keras.python.keras import backend as K$/;"	i
+K	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras import backend as K$/;"	i
+Layer	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras.engine import Layer$/;"	i
+LoggerPlotter	code/utils/plotting_tools.py	/^class LoggerPlotter(keras.callbacks.Callback):$/;"	c
+LoggingNamespace	code/utils/visualization.py	/^from socketIO_client import SocketIO, LoggingNamespace$/;"	i
+Manager	code/utils/visualization.py	/^from multiprocessing import Process, Manager, Queue$/;"	i
+OverlayPlot	code/utils/visualization.py	/^class OverlayPlot():$/;"	c
+Process	code/utils/visualization.py	/^from multiprocessing import Process, Manager, Queue$/;"	i
+QtCore	code/utils/visualization.py	/^from pyqtgraph.Qt import QtCore, QtGui$/;"	i
+QtGui	code/utils/visualization.py	/^from pyqtgraph.Qt import QtCore, QtGui$/;"	i
+Queue	code/utils/visualization.py	/^from multiprocessing import Process, Manager, Queue$/;"	i
+SeparableConv2DKeras	code/utils/separable_conv2d.py	/^class SeparableConv2DKeras(SeparableConv2DTfLayers, Layer):$/;"	c
+SeparableConv2DTfLayers	code/utils/separable_conv2d.py	/^class SeparableConv2DTfLayers(tf_convolutional_layers.Conv2D):$/;"	c
+SideBySidePlot	code/utils/visualization.py	/^class SideBySidePlot():$/;"	c
+SocketIO	code/utils/visualization.py	/^from socketIO_client import SocketIO, LoggingNamespace$/;"	i
+Thread	code/follower.py	/^from threading import Thread$/;"	i
+__init__	code/follower.py	/^    def __init__(self, image_hw, model, pred_viz_enabled = False, queue=None):$/;"	m	class:Follower
+__init__	code/utils/data_iterator.py	/^    def __init__(self, data_folder, batch_size, image_shape,$/;"	m	class:BatchIteratorSimple
+__init__	code/utils/plotting_tools.py	/^    def __init__(self):$/;"	m	class:LoggerPlotter
+__init__	code/utils/separable_conv2d.py	/^  def __init__(self, filters,$/;"	m	class:SeparableConv2DTfLayers
+__init__	code/utils/separable_conv2d.py	/^  def __init__(self, size=(2, 2), data_format=None, **kwargs):$/;"	m	class:BilinearUpSampling2D
+__init__	code/utils/separable_conv2d.py	/^  def __init__(self,$/;"	m	class:SeparableConv2DKeras
+__init__	code/utils/visualization.py	/^    def __init__(self,name, image_hw):$/;"	m	class:SideBySidePlot
+__init__	code/utils/visualization.py	/^    def __init__(self,name,image_hw):$/;"	m	class:OverlayPlot
+_compute_output_shape	code/utils/separable_conv2d.py	/^  def _compute_output_shape(self, input_shape):$/;"	m	class:BilinearUpSampling2D
+_compute_output_shape	code/utils/separable_conv2d.py	/^  def _compute_output_shape(self, input_shape):$/;"	m	class:SeparableConv2DTfLayers
+_update	code/utils/visualization.py	/^    def _update(self):$/;"	m	class:OverlayPlot
+_update	code/utils/visualization.py	/^    def _update(self):$/;"	m	class:SideBySidePlot
+activations	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras import activations$/;"	i
+app	code/follower.py	/^app = Flask(__name__)$/;"	v
+argparse	code/follower.py	/^import argparse$/;"	i
+argparse	code/utils/visualization.py	/^import argparse$/;"	i
+array_ops	code/utils/separable_conv2d.py	/^from tensorflow.python.ops import array_ops$/;"	i
+average_squared_distance	code/utils/scoring_utils.py	/^def average_squared_distance(y_true, y_pred):$/;"	f
+average_squared_log_distance	code/utils/scoring_utils.py	/^def average_squared_log_distance(y_true, y_pred):$/;"	f
+base	code/utils/separable_conv2d.py	/^from tensorflow.python.layers import base$/;"	i
+base64	code/follower.py	/^import base64$/;"	i
+base64	code/utils/sio_msgs.py	/^import base64$/;"	i
+base64	code/utils/visualization.py	/^import base64$/;"	i
+build	code/utils/separable_conv2d.py	/^  def build(self, input_shape):$/;"	m	class:SeparableConv2DKeras
+build	code/utils/separable_conv2d.py	/^  def build(self, input_shape):$/;"	m	class:SeparableConv2DTfLayers
+call	code/utils/separable_conv2d.py	/^  def call(self, inputs):$/;"	m	class:BilinearUpSampling2D
+call	code/utils/separable_conv2d.py	/^  def call(self, inputs):$/;"	m	class:SeparableConv2DTfLayers
+combine_masks	code/preprocess_ims.py	/^def combine_masks(processed_folder):$/;"	f
+constant_op	code/utils/separable_conv2d.py	/^from tensorflow.python.framework import constant_op$/;"	i
+constraints	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras import constraints$/;"	i
+conv_utils	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras.utils import conv_utils$/;"	i
+create_box_marker_msg	code/utils/sio_msgs.py	/^def create_box_marker_msg(id, pose, dims=(0.7,0.7,2.0), color=(0,0,1,0.1), duration=0.4):$/;"	f
+create_delete_marker_msg	code/utils/sio_msgs.py	/^def create_delete_marker_msg(id):$/;"	f
+create_object_detected_msg	code/utils/sio_msgs.py	/^def create_object_detected_msg(position):$/;"	f
+data_iterator	code/follower.py	/^from utils import data_iterator$/;"	i
+data_iterator	code/utils/model_tools.py	/^from . import data_iterator$/;"	i
+data_iterator	code/utils/visualization.py	/^from utils import data_iterator$/;"	i
+euler2mat	code/follower.py	/^from transforms3d.euler import euler2mat, mat2euler$/;"	i
+eventlet	code/follower.py	/^import eventlet.wsgi$/;"	i
+find_largest_obj	code/utils/scoring_utils.py	/^def find_largest_obj(seg_mask, objs):$/;"	f
+gen_nn_ops	code/utils/separable_conv2d.py	/^from tensorflow.python.ops import gen_nn_ops$/;"	i
+get_centroid	code/utils/scoring_utils.py	/^def get_centroid(seg_mask, slices):$/;"	f
+get_centroid_largest_blob	code/utils/scoring_utils.py	/^def get_centroid_largest_blob(seg_mask):$/;"	f
+get_config	code/utils/separable_conv2d.py	/^  def get_config(self):$/;"	m	class:BilinearUpSampling2D
+get_config	code/utils/separable_conv2d.py	/^  def get_config(self):$/;"	m	class:SeparableConv2DKeras
+get_custom_objects	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras.utils.generic_utils import get_custom_objects $/;"	i
+get_depth_image	code/follower.py	/^def get_depth_image(data):$/;"	f
+get_im_data	code/preprocess_ims.py	/^def get_im_data(base_path):$/;"	f
+get_im_file_sample	code/utils/plotting_tools.py	/^def get_im_file_sample(grading_data_dir_name, subset_name, pred_dir_suffix=None, n_file_names=10):$/;"	f
+get_im_files	code/utils/plotting_tools.py	/^def get_im_files(path, subset_name):$/;"	f
+get_mask_files	code/preprocess_ims.py	/^def get_mask_files(image_files):$/;"	f
+get_mask_files	code/utils/plotting_tools.py	/^def get_mask_files(path, subset_name):$/;"	f
+get_patches	code/utils/data_iterator.py	/^def get_patches(image, image_mask):$/;"	f
+get_pred_files	code/utils/plotting_tools.py	/^def get_pred_files(subset_name):$/;"	f
+get_ros_pose	code/follower.py	/^def get_ros_pose(data):$/;"	f
+get_unity_pose_from_ros	code/follower.py	/^def get_unity_pose_from_ros(data):$/;"	f
+get_xyz_from_image	code/follower.py	/^def get_xyz_from_image(u, v, depth, im_hw):$/;"	f
+glob	code/preprocess_ims.py	/^import glob$/;"	i
+glob	code/utils/data_iterator.py	/^from glob import glob$/;"	i
+glob	code/utils/model_tools.py	/^import glob$/;"	i
+glob	code/utils/plotting_tools.py	/^import glob$/;"	i
+glob	code/utils/scoring_utils.py	/^import glob$/;"	i
+glob	code/utils/visualization.py	/^import glob$/;"	i
+image_ops	code/utils/separable_conv2d.py	/^from tensorflow.python.ops import image_ops$/;"	i
+indicator_dict	code/preprocess_ims.py	/^    indicator_dict = get_im_data(raw_data) $/;"	v
+init_ops	code/utils/separable_conv2d.py	/^from tensorflow.python.ops import init_ops$/;"	i
+initializers	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras import initializers$/;"	i
+intersection_over_union	code/utils/scoring_utils.py	/^def intersection_over_union(y_true, y_pred):$/;"	f
+jaccard_distance	code/utils/scoring_utils.py	/^def jaccard_distance(y_true, y_pred):$/;"	f
+join	code/utils/visualization.py	/^    def join(self):$/;"	m	class:OverlayPlot
+join	code/utils/visualization.py	/^    def join(self):$/;"	m	class:SideBySidePlot
+json	code/utils/model_tools.py	/^import json$/;"	i
+keras	code/follower.py	/^from tensorflow.contrib.keras.python import keras$/;"	i
+keras	code/utils/model_tools.py	/^from tensorflow.contrib.keras.python import keras $/;"	i
+keras	code/utils/plotting_tools.py	/^from tensorflow.contrib.keras.python import keras$/;"	i
+load_images	code/utils/plotting_tools.py	/^def load_images(file_tuple):$/;"	f
+load_network	code/utils/model_tools.py	/^def load_network(your_weight_filename):$/;"	f
+make_dir_if_not_exist	code/preprocess_ims.py	/^def make_dir_if_not_exist(path):$/;"	f
+make_dir_if_not_exist	code/utils/model_tools.py	/^def make_dir_if_not_exist(path):$/;"	f
+make_dir_if_not_exist	code/utils/plotting_tools.py	/^def make_dir_if_not_exist(path):$/;"	f
+mat2euler	code/follower.py	/^from transforms3d.euler import euler2mat, mat2euler$/;"	i
+math	code/follower.py	/^import math$/;"	i
+matplotlib	code/utils/plotting_tools.py	/^import matplotlib.patches as mpatches $/;"	i
+matplotlib	code/utils/plotting_tools.py	/^import matplotlib.pyplot as plt$/;"	i
+misc	code/follower.py	/^from scipy import misc$/;"	i
+misc	code/preprocess_ims.py	/^from scipy import misc$/;"	i
+misc	code/utils/data_iterator.py	/^from scipy import misc$/;"	i
+misc	code/utils/model_tools.py	/^from scipy import misc$/;"	i
+misc	code/utils/plotting_tools.py	/^from scipy import misc$/;"	i
+misc	code/utils/scoring_utils.py	/^from scipy import misc$/;"	i
+misc	code/utils/visualization.py	/^from scipy import misc$/;"	i
+model_tools	code/follower.py	/^from utils import model_tools$/;"	i
+morphology	code/utils/scoring_utils.py	/^from skimage import morphology$/;"	i
+move_labels	code/preprocess_ims.py	/^def move_labels(input_folder, output_folder, fold_id):$/;"	f
+move_png_to_jpeg	code/preprocess_ims.py	/^def move_png_to_jpeg(input_folder, output_folder, fold_id):$/;"	f
+mpatches	code/utils/plotting_tools.py	/^import matplotlib.patches as mpatches $/;"	i
+ndi	code/utils/scoring_utils.py	/^from scipy import ndimage as ndi$/;"	i
+next	code/utils/data_iterator.py	/^    def next(self):$/;"	m	class:BatchIteratorSimple
+nn	code/utils/separable_conv2d.py	/^from tensorflow.python.ops import nn$/;"	i
+nn_ops	code/utils/separable_conv2d.py	/^from tensorflow.python.ops import nn_ops$/;"	i
+np	code/follower.py	/^import numpy as np$/;"	i
+np	code/preprocess_ims.py	/^import numpy as np$/;"	i
+np	code/utils/data_iterator.py	/^import numpy as np$/;"	i
+np	code/utils/model_tools.py	/^import numpy as np$/;"	i
+np	code/utils/plotting_tools.py	/^import numpy as np$/;"	i
+np	code/utils/scoring_utils.py	/^import numpy as np $/;"	i
+np	code/utils/separable_conv2d.py	/^import numpy as np$/;"	i
+np	code/utils/visualization.py	/^import numpy as np$/;"	i
+on_batch_end	code/utils/plotting_tools.py	/^    def on_batch_end(self, batch, logs=None):$/;"	m	class:LoggerPlotter
+on_epoch_begin	code/utils/plotting_tools.py	/^    def on_epoch_begin(self, epoch, logs=None):$/;"	m	class:LoggerPlotter
+on_epoch_end	code/utils/plotting_tools.py	/^    def on_epoch_end(self, epoch, logs=None):$/;"	m	class:LoggerPlotter
+on_sensor_frame	code/follower.py	/^    def on_sensor_frame(self, data):$/;"	m	class:Follower
+op	code/utils/separable_conv2d.py	/^    def op(input_converted, _, padding):$/;"	f	function:separable_conv2d_tf_nn
+ops	code/utils/separable_conv2d.py	/^from tensorflow.python.framework import ops$/;"	i
+os	code/follower.py	/^import os$/;"	i
+os	code/preprocess_ims.py	/^import os$/;"	i
+os	code/utils/data_iterator.py	/^import os$/;"	i
+os	code/utils/model_tools.py	/^import os$/;"	i
+os	code/utils/plotting_tools.py	/^import os$/;"	i
+os	code/utils/scoring_utils.py	/^import os $/;"	i
+os	code/utils/visualization.py	/^import os$/;"	i
+out_train_dir	code/preprocess_ims.py	/^    out_train_dir = os.path.join(proc_data, 'train')$/;"	v
+out_val_dir	code/preprocess_ims.py	/^    out_val_dir = os.path.join(proc_data, 'validation')$/;"	v
+overlay_predictions	code/utils/visualization.py	/^def overlay_predictions(image, im_softmax,image_shape, threshold, channel, seg_color=(0,255,0,172)):$/;"	f
+pg	code/utils/visualization.py	/^import pyqtgraph as pg$/;"	i
+plot_keras_model	code/utils/plotting_tools.py	/^def plot_keras_model(model, fig_name):$/;"	f
+plt	code/utils/plotting_tools.py	/^import matplotlib.pyplot as plt$/;"	i
+preprocess_input	code/utils/data_iterator.py	/^def preprocess_input(x):$/;"	f
+proc_data	code/preprocess_ims.py	/^    proc_data = os.path.join('..', 'data', 'processed_sim_data')$/;"	v
+ptime	code/utils/visualization.py	/^import pyqtgraph.ptime as ptime$/;"	i
+pyqtgraph	code/utils/visualization.py	/^import pyqtgraph.ptime as ptime$/;"	i
+raw_data	code/preprocess_ims.py	/^    raw_data = os.path.join('..', 'data', 'raw_sim_data')$/;"	v
+regularizers	code/utils/separable_conv2d.py	/^from tensorflow.contrib.keras.python.keras import regularizers$/;"	i
+resize_images_bilinear	code/utils/separable_conv2d.py	/^def resize_images_bilinear(x, height_factor, width_factor, data_format):$/;"	f
+run	code/utils/visualization.py	/^    def run(self):$/;"	m	class:OverlayPlot
+run	code/utils/visualization.py	/^    def run(self):$/;"	m	class:SideBySidePlot
+save_network	code/utils/model_tools.py	/^def save_network(your_model, your_weight_filename):$/;"	f
+sched	code/utils/visualization.py	/^import sched, time, threading$/;"	i
+score_run_centroid	code/utils/scoring_utils.py	/^def score_run_centroid(gt_dir, pred_dir):$/;"	f
+score_run_iou	code/utils/scoring_utils.py	/^def score_run_iou(gt_dir, pred_dir):$/;"	f
+scoring_utils	code/follower.py	/^from utils import scoring_utils$/;"	i
+sensor_frame	code/follower.py	/^def sensor_frame(sid, data):$/;"	f
+separable_conv2d	code/follower.py	/^from utils import separable_conv2d$/;"	i
+separable_conv2d_keras_backend	code/utils/separable_conv2d.py	/^def separable_conv2d_keras_backend(x,$/;"	f
+separable_conv2d_tf_nn	code/utils/separable_conv2d.py	/^def separable_conv2d_tf_nn(input,$/;"	f
+shift_and_pad_augmentation	code/utils/data_iterator.py	/^def shift_and_pad_augmentation(image, image_mask):$/;"	f
+show	code/utils/plotting_tools.py	/^def show(im, x=5, y=5):$/;"	f
+show_images	code/utils/plotting_tools.py	/^def show_images(maybe_ims, x=4, y=4):$/;"	f
+shutil	code/preprocess_ims.py	/^import shutil$/;"	i
+signal	code/follower.py	/^import signal$/;"	i
+sio	code/follower.py	/^sio = socketio.Server()$/;"	v
+sio_msgs	code/follower.py	/^from utils import sio_msgs$/;"	i
+sio_server	code/follower.py	/^def sio_server():$/;"	f
+socketio	code/follower.py	/^import socketio$/;"	i
+start	code/utils/visualization.py	/^    def start(self):$/;"	m	class:OverlayPlot
+start	code/utils/visualization.py	/^    def start(self):$/;"	m	class:SideBySidePlot
+sys	code/follower.py	/^import sys$/;"	i
+sys	code/preprocess_ims.py	/^import sys$/;"	i
+tf	code/follower.py	/^import tensorflow as tf$/;"	i
+tf_convolutional_layers	code/utils/separable_conv2d.py	/^from tensorflow.python.layers import convolutional as tf_convolutional_layers$/;"	i
+threading	code/utils/visualization.py	/^import sched, time, threading$/;"	i
+time	code/follower.py	/^import time$/;"	i
+time	code/utils/visualization.py	/^import sched, time, threading$/;"	i
+time	code/utils/visualization.py	/^import time$/;"	i
+to_radians	code/follower.py	/^def to_radians(deg_ang):$/;"	f
+train_val_curve	code/utils/plotting_tools.py	/^def train_val_curve(train_loss, val_loss=None):$/;"	f
+utils	code/utils/separable_conv2d.py	/^from tensorflow.python.layers import utils$/;"	i
+visualization	code/follower.py	/^from utils import visualization$/;"	i
+write_predictions_grade_set	code/utils/model_tools.py	/^def write_predictions_grade_set(model, out_folder_suffix,subset_name, grading_dir_name):$/;"	f
+wsgi	code/follower.py	/^import eventlet.wsgi$/;"	i
