@@ -28,7 +28,7 @@ The separable convolution operation is defined as `SeparableConv2DKeras()` in Ke
 ### 2.3 Batch Normalization  
 Normalization is a common regulation method to improve the overall performance of the neural network. It is usually applied to the input of the network. On the other hand, the output of a layer can be regarded as the input to the next layer. In the light of this statement, the output may also be normalized before pumping into the next layer. Batch Normalization is such a technique that normalize the output of a layer.  
 
-The main beinifet of batch normalization are: (1) Networks train faster; (2) Allows higher learning rates; (3) Simplifies the creation of deeper networks; (4) Provides a bit of regularization  
+The main benefit of batch normalization are: (1) Networks train faster; (2) Allows higher learning rates; (3) Simplifies the creation of deeper networks; (4) Provides a bit of regularization  
 
 The function `eparable_conv2d_batchnorm()` in Keras performs batch normalization.  
 
@@ -36,10 +36,10 @@ The function `eparable_conv2d_batchnorm()` in Keras performs batch normalization
 ### 2.4 1 x 1 Convolutions  
 Generally speaking, the output of a convolutional layer is a 4D tensor. The 1x1 convolution helped in reducing the dimensionality of the layer. In the FCN, the 1 x 1 convolution is also used to finish up the encoder section of the network and pass data to the decoder.  
 
-### 2.4 Transposed Convolution  
+### 2.5 Transposed Convolution  
 Compared with convolutional layers, the main function of a transposed layer is to upsampling the input layer. The transposed convolution can be act as the core part in the decoder in a FCN.
 
-### 2.5 Bilinear Upsample  
+### 2.6 Bilinear Upsample  
 Bilinear is another method to upsample the inputs to this layer. It utilizes the weighted average of four nearest known pixels, located diagonally to a given pixel, to estimate a new pixel intensity value. The weighted average is usually distance dependent.  
 It is defined as function `BilinearUpSampling2D()` in Keras.  
 
@@ -50,14 +50,19 @@ The previous section talks about the main components of a FCN one by one. This s
 
 Fig. 2 Overall Architecture of FCN  
 
-### 3.1 Structure of Encoder  
-As shown in the Fig. 2, the yellow-colored layers are separable convolutional layers. These three layers form the section of encoder in the FCN network. Each convolutional operation strides the kernel for 2 and double the depth of the layer.
+### 3.1 Structure of Encoder and Discussion  
+As shown in the Fig. 2, the yellow-colored layers are separable convolutional layers. These three layers form the section of encoder in the FCN network. Each convolutional operation strides the kernel for 2 and double the depth of the layer.  
 
-### 3.2 Structure of Decoder  
-In Fig.2, the decoder section of FCN is colored as green. The output of 1 x 1 convolution is pumped into the bilinear upsample functions one after another. Finally, the output is upsampled to the same size as the input layer.
+The overall structure of the encoder section is quite similar to a CNN for image identification, which also employs some pooling techniques. The encoder section helps the network to learn details of image for object classification and down-samples the input image. While the pooling techniques prevent the neural network from the problem of over-fitting, it may cause the network to loose some overall information.  
+
+For the reasons above, a special technique call **skip layer** is also add. It concatenates some layers in the encoder section to the corresponding layers in the decoder section to maintain the flow of information on lager scale.  
+
+### 3.2 Structure of Decoder and Discussion  
+In Fig.2, the decoder section of FCN is colored as green. The output of 1 x 1 convolution is pumped into the bilinear upsample functions one after another. Finally, the output is upsampled to the same size as the input layer.  
+While the encoder down-samples the image, the decoder up-samples the details thus regains some spatial information. The trained kernels for classification from the encoder are mapped to the full size as the input images.  
 
 ### 3.3 1 x 1 Convolution as Connection
-The encoder section and the decoder section are connected with a 1 x 1 convolutional layer. The main function of 1 x 1 convolution is explained in section 2.4.
+The encoder section and the decoder section are connected with a 1 x 1 convolutional layer. The main function of 1 x 1 convolution is explained in section 2.4. Generally speaking, the output of a convolutional layer is a 4D tensor. The 1x1 convolution helped in reducing the dimensionality of the layer. In the FCN, the 1 x 1 convolution is also used to finish up the encoder section of the network and pass data to the decoder. The 1x1 convolution also helps to retain spatial information.  
 
 ### 3.3 Overall Structure of FCN  
 A typical FCN composed of a encoder section and a decoder section which are connected with a 1 x 1 convolution. The input is pumped though the whole network.  
@@ -111,32 +116,29 @@ The overall training process took more than one hour. The process and the final 
 The accuracy during training is show in the images below.  
 ![Convolutional Layer](/report/imgs/epoch_20.png "Fig. 3 Result of Target Identification")  
 Fig. 3 Epoch 23/60  
-![Convolutional Layer](/report/imgs/epoch_50.png "Fig. 3 Result of Target Identification")    
-Fig. 3 Epoch 60/60  
+![Convolutional Layer](/report/imgs/epoch_50.png "Fig. 4 Result of Target Identification")    
+Fig. 4 Epoch 60/60  
 ### 6.2 The results  
 The performance of this network structure is good enough. The trained network successfully accomplishes the tasks of image segmentation and image identification. The detailed results are contained in the project folder.  
 
-![Convolutional Layer](/report/imgs/result_hero.png "Fig. 3 Result of Target Identification")  
-Fig. 3 Result of Target Identification  
+![Convolutional Layer](/report/imgs/result_hero.png "Fig. 5 Result of Target Identification")  
+Fig. 5 Result of Target Identification  
 
-![Convolutional Layer](/report/imgs/result_with_no_tag.png "Fig. 4 Result without Target in Image")  
-Fig. 4 Result without Target in Image  
+![Convolutional Layer](/report/imgs/result_with_no_tag.png "Fig. 6 Result without Target in Image")  
+Fig. 6 Result without Target in Image  
 
-![Convolutional Layer](/report/imgs/result_with_tag.png "Fig. 5 Result with Target in Image")  
-Fig. 5 Result with Target in Image  
+![Convolutional Layer](/report/imgs/result_with_tag.png "Fig. 7 Result with Target in Image")  
+Fig. 7 Result with Target in Image  
 
-![Convolutional Layer](/report/imgs/final_score.png "Fig. 6 Final Score")  
-Fig. 6 Final Score
+![Convolutional Layer](/report/imgs/final_score.png "Fig. 8 Final Score")  
+Fig. 8 Final Score
 
 As shown in the figures above the hero is detected successfully. The final score of the training is 0.413, which is good enough.
 
 ## 7. Discussion and Future Work
-It is interesting to
-
-
 By trying different kinds of structures, it is clear that the number of kernels has a big influence on the performance of the FCN. Increasing a small amount of kernels will increase the overall performance of the FCN significantly. Limited by the RAM in the GPU, the max number of kernels of the first convolutional layer is 96. I would like to try a larger number of kernels in the future.  
 
-As for different tasks such as detecting cats or dogs in the image, the kernel should be different. For this reason, if the network is supposed to be used for thoes tasks, maybe the it's good to add both skip layers and kernels.
+Since the quality of the training process depends the the training data, so there are several techniques that can be applied to increase the quality of the data set. The first one is to increase the size of input images. A larger input size will feed more detailed information to the FCN network. Another interesting technique can be applied is to create new 'sample images' by flipping the images in the original train dataset. This may not only increase the size of the training set, by may reduce the spatial dependency as well. The last technique is quite straight forward. By collecting more images and joining them to the training set may also increase the performance quite largely.
 
 This Follow Me project is quit interesting. I learnt a lot from this project. I will apply this tech to my self-driving cart in the very near future.  
 
