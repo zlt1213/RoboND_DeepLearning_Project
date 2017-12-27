@@ -100,12 +100,19 @@ I tried to train the network on two different machines. The first one is the Ama
 After a few test runs, I noticed that the overall performance of the machine will increase significantly by increasing the number of kernels in each convolutional layers. Thus I double the number of kernels and tune the batch size so that the network will fit into the GPU-RAM.  
 The overall training process took more than one hour. The process and the final results can be seen in the jupyter notebook.  
 ### 6.2 The results  
+The performance of this network structure is good enought. The trained network successfully accomplishs the tasks of image segmentation and image identificatoin. The detailed results are contained in the project folder. 
 
 
 
 ## 7. Discussion and Future Work
 It is interesting to 
 
+
+By trying different kinds of structures, it is clear that the number of kernels has a big influence on the performance of the FCN. Increasing a small amount of kernels will increase the overall performance of the FCN significantly. Limited by the RAM in the GPU, the max number of kernels of the first convolutional layer is 96. I would like to try a larger number of kernels in the future.  
+
+As for different tasks such as detecting cats or dogs in the image, the kernel should be different. For this reason, if the network is supposed to be used for thoes tasks, maybe the it's good to add both skip layers and kernels. 
+
+This Follow Me project is quit interesting. I learnt a lot from this project. I will apply this tech to my self-driving cart in the very near future.  
 
 ## 8. Reference  
 [1] http://iamaaditya.github.io/2016/03/one-by-one-convolution/  
